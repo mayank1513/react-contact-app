@@ -1,0 +1,60 @@
+.listItem {
+    background: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #eee5;
+    transform: scale(0.8, .8) translateX(-200%);
+}
+
+.animClass {
+    transform: scale(1, 1) translateX(0);
+}
+
+.listItem * {
+    transition: all 0s;
+}
+
+.listItem:hover {
+    background: greenyellow;
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contactDetails {
+    flex-grow: 1;
+}
+
+.contactDetails * {
+    margin: 0.1em;
+}
+
+.onHover {
+    font-size: 0;
+    height: 0;
+    display: none;
+}
+
+.listItem:hover .onHover {
+    font-size: 1em;
+    height: auto;
+    display: inline;
+}
+
+@media (hover: none) {
+    .listItem .btn {
+        background: #aaaa;
+        border-radius: 50%;
+    }
+}
+
+.btn {
+    display: none;
+}
+
+@media (min-width:600px) {
+    .btn {
+        display: inline;
+    }
+}

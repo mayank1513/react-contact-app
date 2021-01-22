@@ -1,0 +1,61 @@
+.container {
+    transform: scale(0.8, .8) translateX(200%);
+    opacity: 0.2;
+}
+
+.animClass {
+    transform: scale(1, 1) translateX(0);
+    opacity: 1;
+}
+
+.form {
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    font-size: inherit;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: 0;
+}
+
+.form button {
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: inherit;
+    border: 2px solid blue;
+    background: white;
+    border-radius: 10px;
+    outline: 0;
+}
+
+.form button:hover:enabled {
+    cursor: pointer;
+    background: blue;
+    color: white;
+    font-weight: bold;
+}
+
+.form button:disabled {
+    border: 1px solid #aaaa;
+}
+
+.err {
+    position: relative;
+    color: red;
+    padding: 0 0.5em;
+    float: right;
+    background: white;
+    z-index: 100px;
+    margin-bottom: -20px;
+}
