@@ -11,7 +11,6 @@ export default function DisplayContact({ id }) {
     getContact(id)
       .then((it) => setContact(it))
       .catch((err) => {});
-
     setTimeout(() => setAnimClass(styles.animClass), 50);
   }, [id]);
   const router = useHistory();
@@ -25,6 +24,7 @@ export default function DisplayContact({ id }) {
           }}
           src="/arrow-back.svg"
           className="logo"
+          alt=""
         />
         <span className="spacer"></span>
         <FavButton
@@ -39,7 +39,11 @@ export default function DisplayContact({ id }) {
       </header>
       {contact && (
         <div className={styles.container + " " + animClass}>
-          <img src="/person.svg" className={styles.avatar + " " + animClass} />
+          <img
+            alt=""
+            src="/person.svg"
+            className={styles.avatar + " " + animClass}
+          />
           <h1>{contact.name}</h1>
           <p>
             <a href={"mailto:" + contact.email}>{contact.email}</a>

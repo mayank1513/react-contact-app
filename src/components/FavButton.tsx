@@ -12,6 +12,7 @@ export default function FavButton({ fav, onClick }) {
     <img
       onClick={onClick}
       src={fav ? "/heart.svg" : "/heart-off.svg"}
+      alt=""
       className={styles.like + " " + animClass}
     />
   );

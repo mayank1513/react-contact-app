@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { createContact, updateContact } from "../util/contacts";
 import styles from "./UpdateContact.module.css";
 import FavButton from "./FavButton";
@@ -94,6 +95,7 @@ class UpdateContact extends Component<RecipeProps, RecipeState> {
               }, 300);
             }}
             src="/arrow-back.svg"
+            alt=""
             className="logo"
           />
           <span className="spacer"></span>
@@ -149,4 +151,4 @@ class UpdateContact extends Component<RecipeProps, RecipeState> {
   }
 }
 
-export default UpdateContact;
+export default withRouter(UpdateContact);

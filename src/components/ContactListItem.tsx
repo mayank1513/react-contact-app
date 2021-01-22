@@ -18,7 +18,7 @@ export default function ContactListItem({
     );
   };
   useEffect(() => {
-    // foo();
+    foo();
     window.addEventListener("scroll", foo);
     window.addEventListener("resize", foo);
   }, []);
@@ -28,7 +28,7 @@ export default function ContactListItem({
       onClick={onItemClick}
       className={styles.listItem + " " + animClass}
     >
-      <img src="/person.svg" className={"logo"} />
+      <img src="/person.svg" className={"logo"} alt="" />
       <div className={styles.contactDetails}>
         <p>{contact.name}</p>
         <small className={styles.onHover}>{contact.email}</small>

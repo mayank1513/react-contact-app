@@ -1,6 +1,6 @@
 import UpdateContact from "../components/UpdateContact";
 
-export default ({ createContact }) => {
+export default () => {
   return (
     <main className="main">
       <UpdateContact />

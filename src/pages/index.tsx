@@ -2,9 +2,8 @@ import { useHistory } from "react-router-dom";
 import { useEffect, useState, useReducer, useRef } from "react";
 import ContactListItem from "../components/ContactListItem";
 import ErrorBoundary from "../components/ErrorBoundary";
-import styles from "../styles/Home.module.css";
-import { getContacts } from "../util/contacts";
-import { updateContact } from "../util/contacts";
+import styles from "./Home.module.css";
+import { getContacts, updateContact } from "../util/contacts";
 
 export default function Home() {
   const [animClass, setAnimClass] = useState("");
@@ -71,6 +70,7 @@ export default function Home() {
             // if (el) el.focus(); --strangely ts complains about this line
           }}
           className="logo"
+          alt=""
         />
         <label className={styles.searchBox}>
           <input
@@ -112,6 +112,7 @@ export default function Home() {
             setTimeout(() => router.push("/create"), 250);
           }}
           src="/person-add.svg"
+          alt=""
           className="logo"
         />
       </header>
