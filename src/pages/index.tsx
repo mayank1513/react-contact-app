@@ -61,7 +61,8 @@ export default function Home() {
         <img
           src="/search.svg"
           onClick={() => {
-            const el = ref.current;
+            document.getElementById("search").focus();
+            // const el = ref.current;
             // if (el) el.focus(); --strangely ts complains about this line
           }}
           className="logo"
@@ -70,6 +71,7 @@ export default function Home() {
         <label className={styles.searchBox}>
           <input
             ref={ref}
+            id="search"
             type="text"
             placeholder="start typing name or email"
             value={searchState.search}
