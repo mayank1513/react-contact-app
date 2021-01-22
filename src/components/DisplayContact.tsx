@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getContact, removeContact, updateContact } from "../util/contacts";
 import styles from "./DisplayContact.module.css";
@@ -15,7 +14,7 @@ export default function DisplayContact({ id }) {
 
     setTimeout(() => setAnimClass(styles.animClass), 50);
   }, [id]);
-  const router = useRouter();
+  const router = useHistory();
   return (
     <div>
       <header>

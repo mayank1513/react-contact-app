@@ -1,10 +1,10 @@
 import UpdateContact from "../../../components/UpdateContact.tsx";
-import { useRouter } from "next/router";
+import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getContact } from "../../../util/contacts";
 
 export default () => {
-  const router = useRouter();
+  const router = useHistory();
   const { id } = router.query;
   const [contact, setContact] = useState();
   useEffect(() => {

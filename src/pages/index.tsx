@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
+import { useHistory } from "react-router-dom";
 import { useEffect, useState, useReducer, useRef } from "react";
 import ContactListItem from "../components/ContactListItem.tsx";
 import ErrorBoundary from "../components/ErrorBoundary.tsx";
@@ -9,7 +9,7 @@ import { updateContact } from "../util/contacts";
 
 export default function Home() {
   const [animClass, setAnimClass] = useState("");
-  const router = useRouter();
+  const router = useHistory();
 
   const actionContactsChange = "contacts";
   const actionSearchChange = "search";

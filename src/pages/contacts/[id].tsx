@@ -1,9 +1,9 @@
 import DisplayContact from "../../components/DisplayContact";
 
-import { useRouter } from "next/router";
+import { useHistory } from "react-router-dom";
 
 export default () => {
-  const router = useRouter();
+  const router = useHistory();
   const { id } = router.query;
   return (
     <main className="main">

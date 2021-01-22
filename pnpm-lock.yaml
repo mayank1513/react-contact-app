@@ -6,6 +6,7 @@ dependencies:
   '@types/node': 12.19.15
   '@types/react': 16.14.2
   '@types/react-dom': 16.9.10
+  '@types/react-router-dom': 5.1.7
   react: 17.0.1
   react-dom: 17.0.1_react@17.0.1
   react-router-dom: 5.2.0_react@17.0.1
@@ -1897,6 +1898,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-mWA/4zFQhfvOA8zWkXobwJvBD7vzcxgrOQ0J5CH1votGqdq9m7+FwtGaqyCZqC3NyyBkc9z4m+iry4LlqcMWJg==
+  /@types/history/4.7.8:
+    dev: false
+    resolution:
+      integrity: sha512-S78QIYirQcUoo6UJZx9CSP0O2ix9IaeAXwQi26Rhr/+mg7qqPy8TzaxHSUut7eGjL8WmLccT7/MXf304WjqHcA==
   /@types/html-minifier-terser/5.1.1:
     dev: false
     resolution:
@@ -1966,6 +1971,21 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ItatOrnXDMAYpv6G8UCk2VhbYVTjZT9aorLtA/OzDN9XJ2GKcfam68jutoAcILdRjsRUO8qb7AmyObF77Q8QFw==
+  /@types/react-router-dom/5.1.7:
+    dependencies:
+      '@types/history': 4.7.8
+      '@types/react': 16.14.2
+      '@types/react-router': 5.1.11
+    dev: false
+    resolution:
+      integrity: sha512-D5mHD6TbdV/DNHYsnwBTv+y73ei+mMjrkGrla86HthE4/PVvL1J94Bu3qABU+COXzpL23T1EZapVVpwHuBXiUg==
+  /@types/react-router/5.1.11:
+    dependencies:
+      '@types/history': 4.7.8
+      '@types/react': 16.14.2
+    dev: false
+    resolution:
+      integrity: sha512-ofHbZMlp0Y2baOHgsWBQ4K3AttxY61bDMkwTiBOkPg7U6C/3UwwB5WaIx28JmSVi/eX3uFEMRo61BV22fDQIvg==
   /@types/react/16.14.2:
     dependencies:
       '@types/prop-types': 15.7.3
@@ -12292,6 +12312,7 @@ specifiers:
   '@types/node': ^12.0.0
   '@types/react': ^16.9.53
   '@types/react-dom': ^16.9.8
+  '@types/react-router-dom': ^5.1.7
   react: ^17.0.1
   react-dom: ^17.0.1
   react-router-dom: ^5.2.0

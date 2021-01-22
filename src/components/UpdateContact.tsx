@@ -1,5 +1,4 @@
-import Router from "next/router";
-import Link from "next/link";
+import Router from "react-router-dom";
 import { Component } from "react";
 import { createContact, updateContact } from "../util/contacts";
 import styles from "./UpdateContact.module.css";

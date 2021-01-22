@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { useHistory } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import styles from "./ContactList.module.css";
 import FavButton from "./FavButton";
@@ -8,7 +8,7 @@ export default function ContactListItem({
   onChangeLike,
   onItemClick,
 }) {
-  const router = useRouter();
+  const router = useHistory();
   const ref = useRef();
   const [animClass, setAnimClass] = useState("");
 
