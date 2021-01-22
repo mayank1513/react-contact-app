@@ -1,10 +1,24 @@
-import Router from "react-router-dom";
 import { Component } from "react";
 import { createContact, updateContact } from "../util/contacts";
 import styles from "./UpdateContact.module.css";
 import FavButton from "./FavButton";
 
-class UpdateContact extends Component {
+interface RecipeProps {
+  contact?: any;
+  history?: any;
+}
+
+interface RecipeState {
+  name?: string;
+  nameDirty?: boolean;
+  email?: string;
+  emailDirty?: boolean;
+  phone?: string;
+  phoneDirty?: boolean;
+  favorite?: boolean;
+  animClass?: string;
+}
+class UpdateContact extends Component<RecipeProps, RecipeState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,14 +65,16 @@ class UpdateContact extends Component {
         email,
         phone,
         favorite,
-      }).then(() => Router.push(`/contacts/${this.props.contact.id}`));
+      }).then(() =>
+        this.props.history.push(`/contacts/${this.props.contact.id}`)
+      );
     } else {
       createContact({
         name,
         email,
         phone,
         favorite,
-      }).then(() => setTimeout(() => Router.push("/"), 500));
+      }).then(() => setTimeout(() => this.props.history.push("/"), 500));
     }
   }
 
@@ -70,7 +86,7 @@ class UpdateContact extends Component {
             onClick={() => {
               this.setState({ animClass: "" });
               setTimeout(() => {
-                Router.push(
+                this.props.history.push(
                   this.props.contact
                     ? `/contacts/${this.props.contact.id}`
                     : "/"
@@ -118,7 +134,7 @@ class UpdateContact extends Component {
               name="phone"
               type="tel"
               placeholder="Phone"
-              value={this.state.Phone}
+              value={this.state.phone}
               onChange={this.handleInputChange}
             />
           </label>

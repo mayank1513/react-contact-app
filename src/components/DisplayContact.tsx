@@ -6,7 +6,7 @@ import FavButton from "./FavButton";
 
 export default function DisplayContact({ id }) {
   const [animClass, setAnimClass] = useState("");
-  const [contact, setContact] = useState();
+  const [contact, setContact] = useState(null);
   useEffect(() => {
     getContact(id)
       .then((it) => setContact(it))

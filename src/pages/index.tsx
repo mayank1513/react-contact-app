@@ -1,8 +1,7 @@
-import Head from "next/head";
 import { useHistory } from "react-router-dom";
 import { useEffect, useState, useReducer, useRef } from "react";
-import ContactListItem from "../components/ContactListItem.tsx";
-import ErrorBoundary from "../components/ErrorBoundary.tsx";
+import ContactListItem from "../components/ContactListItem";
+import ErrorBoundary from "../components/ErrorBoundary";
 import styles from "../styles/Home.module.css";
 import { getContacts } from "../util/contacts";
 import { updateContact } from "../util/contacts";
@@ -50,6 +49,7 @@ export default function Home() {
   );
 
   useEffect(() => {
+    document.title = "Contacts App | Favorite Medium";
     getContacts().then((c: any) => {
       dispatch({ type: actionContactsChange, value: c });
       setAnimClass(styles.animClass);
@@ -63,15 +63,12 @@ export default function Home() {
   };
   return (
     <div className={styles.container + " " + animClass}>
-      <Head>
-        <title>Contacts App | Favorite Medium</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <header>
         <img
           src="/search.svg"
           onClick={() => {
-            ref.current.focus();
+            const el = ref.current;
+            // if (el) el.focus(); --strangely ts complains about this line
           }}
           className="logo"
         />

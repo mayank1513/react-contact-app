@@ -1,4 +1,3 @@
-import { useHistory } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import styles from "./ContactList.module.css";
 import FavButton from "./FavButton";
@@ -8,8 +7,7 @@ export default function ContactListItem({
   onChangeLike,
   onItemClick,
 }) {
-  const router = useHistory();
-  const ref = useRef();
+  const ref = useRef(null);
   const [animClass, setAnimClass] = useState("");
 
   const foo = () => {
@@ -20,7 +18,7 @@ export default function ContactListItem({
     );
   };
   useEffect(() => {
-    foo();
+    // foo();
     window.addEventListener("scroll", foo);
     window.addEventListener("resize", foo);
   }, []);

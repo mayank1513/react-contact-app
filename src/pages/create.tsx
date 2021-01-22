@@ -1,4 +1,4 @@
-import UpdateContact from "../components/UpdateContact.tsx";
+import UpdateContact from "../components/UpdateContact";
 
 export default ({ createContact }) => {
   return (
