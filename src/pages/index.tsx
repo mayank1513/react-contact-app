@@ -30,12 +30,7 @@ export default function Home() {
           contacts = action.value;
       }
       const filteredContacts = contacts.filter((it) => {
-        return (
-          (!favOnly || it.favorite) &&
-          (it.name.includes(search) ||
-            it.email.includes(search) ||
-            it.phone.includes(search))
-        );
+        return (!favOnly || it.favorite) && it.name.includes(search);
       });
       return { contacts, favOnly, search, filteredContacts };
     },
