@@ -2,7 +2,7 @@ import UpdateContact from "../components/UpdateContact";
 import { useEffect, useState } from "react";
 import { getContact } from "../util/contacts";
 
-export default ({ match }) => {
+export default function Update({ match }) {
   const id = match.params.id;
   const [contact, setContact] = useState<any>();
   useEffect(() => {
@@ -14,4 +14,4 @@ export default ({ match }) => {
       {contact && <UpdateContact contact={contact} />}
     </main>
   );
-};
+}
