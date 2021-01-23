@@ -3,10 +3,9 @@ import { withRouter } from "react-router-dom";
 import { createContact, updateContact } from "../util/contacts";
 import styles from "./UpdateContact.module.css";
 import FavButton from "./FavButton";
-
-interface RecipeProps {
+import { RouteComponentProps } from "react-router";
+interface RecipeProps extends RouteComponentProps<any> {
   contact?: any;
-  history?: any;
 }
 
 interface RecipeState {
@@ -106,7 +105,7 @@ class UpdateContact extends Component<RecipeProps, RecipeState> {
         </header>
         <form className={styles.form} onSubmit={this.handleSubmit}>
           <label>
-            {this.state.nameDirty && this.state.name.length < 3 && (
+            {this.state.nameDirty && this.state.name!.length < 3 && (
               <small className={styles.err}>
                 *Name must be at least 3 characters long
               </small>
@@ -141,7 +140,7 @@ class UpdateContact extends Component<RecipeProps, RecipeState> {
             />
           </label>
           <button
-            disabled={this.state.name.length < 3 || !this.validateEmail()}
+            disabled={this.state.name!.length < 3 || !this.validateEmail()}
           >
             {this.props.contact ? "Update " : "Add "}Contact
           </button>

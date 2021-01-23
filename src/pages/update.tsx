@@ -4,7 +4,7 @@ import { getContact } from "../util/contacts";
 
 export default ({ match }) => {
   const id = match.params.id;
-  const [contact, setContact] = useState(null);
+  const [contact, setContact] = useState<any>();
   useEffect(() => {
     getContact(id).then((ct) => setContact(ct));
   }, [id]);

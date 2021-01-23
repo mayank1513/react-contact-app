@@ -12,7 +12,7 @@ export default function Home() {
   const actionContactsChange = "contacts";
   const actionSearchChange = "search";
   const actionFavOnlyChange = "fav";
-  const ref = useRef();
+  const ref = useRef() as any;
 
   const [searchState, dispatch] = useReducer(
     (state, action) => {
@@ -61,9 +61,8 @@ export default function Home() {
         <img
           src="/search.svg"
           onClick={() => {
-            document.getElementById("search").focus();
-            // const el = ref.current;
-            // if (el) el.focus(); --strangely ts complains about this line
+            // document.getElementById("search").focus();
+            ref.current.focus();
           }}
           className="logo"
           alt=""

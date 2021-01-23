@@ -7,7 +7,7 @@ export default function ContactListItem({
   onChangeLike,
   onItemClick,
 }) {
-  const ref = useRef(null);
+  const ref = useRef() as any;
   const [animClass, setAnimClass] = useState("");
 
   const foo = () => {
@@ -21,6 +21,10 @@ export default function ContactListItem({
     foo();
     window.addEventListener("scroll", foo);
     window.addEventListener("resize", foo);
+    return () => {
+      window.removeEventListener("scroll", foo);
+      window.removeEventListener("resize", foo);
+    };
   }, []);
   return (
     <div
